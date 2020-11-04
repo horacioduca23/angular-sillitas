@@ -1,4 +1,35 @@
-<hello name="{{ name }}"></hello>
-<p>
-  Start editing to see some magic happen :)
-</p>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="#">{{title}}</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Contacto</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">En construccion</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+<h1>Bienvenidos a Sillitas Online, donde encontraras tu próxima silla!</h1>
+<!--Cada propiedad qe qiero usar en el componente, la encierro entre 2 llaves. Es la sintaxis q tiene angular en su template. INTERPOLACION-->
+<div class="container">
+  <div class="row">
+    <div class="col-8">
+      <app-chair-list></app-chair-list>
+    </div>
+    <div class="col-4"> 
+      Carrito de compras
+    </div>
+  </div>
+</div>
+
+
+
+<footer> {{title}}® Online || Todos los derechos reservados. </footer>
