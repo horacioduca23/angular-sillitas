@@ -8,16 +8,23 @@
             <th>Material del tapizado</th>
             <th>Precio</th>
             <th>Stock</th>
+            <th>Compra</th>
         </tr>
     </thead>
     <tbody>
         <tr *ngFor="let chair of chairs" [ngClass]="{'clearance': chair.clearance}">
-            <td><img [src]="chair.image" [alt]="chair.brand"></td>
+            <td><img width="100" class="img-fluid" [src]="chair.image" [alt]="chair.brand"></td>
             <td>{{chair.brand | uppercase}}</td>
             <td>{{chair.model}}</td>
             <td>{{chair.material}}</td>
             <td>{{chair.price | currency}}</td>
             <td><span class="badge badge-danger" *ngIf="chair.stock==0">PRODUCTO SIN STOCK</span></td>
+            <td>
+                <button class="btn btn-outline-danger btn-sm" (click)="downQuantity(chair)">-</button>
+                <input type="text" [(ngModel)]="chair.quantity"><!--Estamos conectados con la cantidad de sillas, ida y vuelta. ngModel-->
+                <button class="btn btn-outline-success btn-sm" (click)="upQuantity(chair)">+</button>
+                {{chair.quantity}}
+            </td>
         </tr>
     </tbody>
 </table>

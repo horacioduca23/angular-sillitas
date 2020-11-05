@@ -17,6 +17,7 @@ export class ChairListComponent implements OnInit {
       image: "assets/img/daza.jpeg",
       stock: 2,
       clearance: false,
+      quantity: 0,
     },
     {
       brand: "Desillas",
@@ -26,6 +27,7 @@ export class ChairListComponent implements OnInit {
       image: "assets/img/desillas.jpeg",
       stock: 3,
       clearance: true,
+      quantity: 0,
     },
     {
       brand: "Helitec",
@@ -35,6 +37,7 @@ export class ChairListComponent implements OnInit {
       image: "assets/img/helitec.jpeg",
       stock: 1,
       clearance: false,
+      quantity: 0,
     },
     {
       brand: "iQual",
@@ -44,6 +47,7 @@ export class ChairListComponent implements OnInit {
       image: "assets/img/iqual.jpeg",
       stock: 0,
       clearance: false,
+      quantity: 0,
     },
   ];
 
@@ -52,4 +56,13 @@ export class ChairListComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  upQuantity(chair: Chair): void {
+    if(chair.quantity < chair.stock)
+    chair.quantity++;
+  }
+
+  downQuantity(chair: Chair): void {
+    if(chair.quantity > 0)
+      chair.quantity--;
+  }
 }
