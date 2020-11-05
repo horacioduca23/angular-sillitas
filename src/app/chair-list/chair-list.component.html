@@ -7,27 +7,17 @@
             <th>Modelo</th>
             <th>Material del tapizado</th>
             <th>Precio</th>
+            <th>Stock</th>
         </tr>
     </thead>
     <tbody>
-        <tr>
+        <tr *ngFor="let chair of chairs" [ngClass]="{'clearance': chair.clearance}">
             <td><img [src]="chair.image" [alt]="chair.brand"></td>
-            <td>{{chair.brand}}</td>
+            <td>{{chair.brand | uppercase}}</td>
             <td>{{chair.model}}</td>
             <td>{{chair.material}}</td>
-            <td>{{chair.price}}</td>
-        </tr>
-        <tr>
-            <td>Daza</td>
-            <td>WN6621GRBK / WN6621REBK</td>
-            <td>Cuero sintético</td>
-            <td>$43,999</td>
-        </tr>
-        <tr>
-            <td>Helitec</td>
-            <td>SILLON GAMER 5727</td>
-            <td>Cuero sintético</td>
-            <td>$40,899</td>
+            <td>{{chair.price | currency}}</td>
+            <td><span class="badge badge-danger" *ngIf="chair.stock==0">SIN STOCK</span></td>
         </tr>
     </tbody>
 </table>
