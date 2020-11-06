@@ -1,5 +1,5 @@
-<h1>Lista de sillas disponibles:</h1>
-<table class="table">
+<h3>Lista de sillas disponibles:</h3>
+<table class="table text-center">
     <thead>
         <tr>
             <th>Imagen</th>
@@ -20,10 +20,13 @@
             <td>{{chair.price | currency}}</td>
             <td><span class="badge badge-danger" *ngIf="chair.stock==0">PRODUCTO SIN STOCK</span></td>
             <td>
+                
+                
+                
+                
                 <button class="btn btn-outline-danger btn-sm" (click)="downQuantity(chair)">-</button>
                 <input type="text" [(ngModel)]="chair.quantity"><!--Estamos conectados con la cantidad de sillas, ida y vuelta. ngModel-->
                 <button class="btn btn-outline-success btn-sm" (click)="upQuantity(chair)">+</button>
-                {{chair.quantity}}
             </td>
         </tr>
     </tbody>

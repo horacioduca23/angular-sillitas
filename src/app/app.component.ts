@@ -8,5 +8,5 @@ import { Component } from '@angular/core';
 })
 //EL COMPONENTE SE LLAMA TITULO, Y LE PONE UN VALOR: sillitas
 export class AppComponent {
-  title = 'Sillitas!';
+  title = 'Sillitas';
 }

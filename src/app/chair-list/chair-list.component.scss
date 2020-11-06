@@ -1,9 +1,17 @@
 //Los estilos que aplique en este componente chair-list, solo se aplican a chair-list
-h1 {
+h3 {
     color: green;
 }
 
 .clearance {
     border:2px solid green;
     background-color: lightgreen;
+}
+
+td {
+    vertical-align: middle;
+}
+
+input {
+    max-width: 30px;
 }
