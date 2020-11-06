@@ -19,14 +19,8 @@
             <td>{{chair.material}}</td>
             <td>{{chair.price | currency}}</td>
             <td><span class="badge badge-danger" *ngIf="chair.stock==0">PRODUCTO SIN STOCK</span></td>
-            <td>
-                
-                
-                
-                
-                <button class="btn btn-outline-danger btn-sm" (click)="downQuantity(chair)">-</button>
-                <input type="text" [(ngModel)]="chair.quantity"><!--Estamos conectados con la cantidad de sillas, ida y vuelta. ngModel-->
-                <button class="btn btn-outline-success btn-sm" (click)="upQuantity(chair)">+</button>
+            <td> 
+                <app-input-integer [(quantity)]="chair.quantity" [max]="chair.stock" *ngIf="chair.stock" (maxReached)="maxReached($event)"></app-input-integer>
             </td>
         </tr>
     </tbody>

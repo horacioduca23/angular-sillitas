@@ -56,13 +56,7 @@ export class ChairListComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  upQuantity(chair: Chair): void {
-    if(chair.quantity < chair.stock)
-    chair.quantity++;
-  }
-
-  downQuantity(chair: Chair): void {
-    if(chair.quantity > 0)
-      chair.quantity--;
+  maxReached(m: string) {
+    alert(m);
   }
 }
