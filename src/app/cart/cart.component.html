@@ -1,1 +1,6 @@
 <h3>Carrito de compras</h3>
+<ul>
+    <li *ngFor="let c of (cartList$ | async)">
+        {{c.brand}}: {{c.quantity}}
+    </li>
+</ul>

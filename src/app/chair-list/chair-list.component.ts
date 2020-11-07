@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ChairCartService } from '../chair-cart.service';
 import { Chair } from './Chair';
 
 @Component({
@@ -51,9 +52,18 @@ export class ChairListComponent implements OnInit {
     },
   ];
 
-  constructor() { }
+  constructor(private cart: ChairCartService) { //en vez de crear la varible fuera, la creo como privada directamente en el Constr. Las instancias dentro tendrán el new ChairCartService()
+  }                                             //este componente necesita un ChairCartService. Si lo tiene, me va a pasar el que ya tenía y sino, va a hacer el new y lo va a crear (x 1era vez)
 
   ngOnInit(): void {
+  }
+  /**
+   * Contiene la logica del negocio: si agregan n sillas al carrito, se descuentan del stock actual
+   */
+  addToCart(chair): void {
+    this.cart.addToCart(chair);
+    chair.stock -= chair.quantity;
+    chair.quantity = 0;
   }
 
   maxReached(m: string) {
